@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<htmL>
+    <head>
+        <meta charset="utf-8">
+        <meta name=viewport content="width=device-width, initial-scale=1.0"> 
+        <title>Background Image Slider</title>
+    </head>
+
+    <style>
+        #container {
+            position:absolute;
+            left: 20%;
+            top:15%;
+            width: 950px;
+            height: 600px;
+            border: 9px solid rgb(29, 29, 255);
+            border-radius: 7px;
+            background-repeat: no-repeat;
+            background-size: 100%;
+            margin:0;
+            font-family: 'Calibri';
+        }
+       
+        #right {
+            position:absolute;
+            left:95%;
+            top:50%;
+            color: white;
+            border:rgb(29, 29, 255);
+            font-size: 15px;
+            background-color:rgb(29, 29, 255);
+            padding-top:10px;
+            padding-bottom:10px;
+            font-weight: 500;
+            border-radius: 5px;
+        }
+
+        #left {
+            position:absolute;
+            top:50%;
+            left:2%;
+            border:rgb(29, 29, 255);
+            color: white;
+            font-size: 15px;
+            background-color:rgb(29, 29, 255);
+            border-radius: 5px;
+            padding-top:10px;
+            padding-bottom:10px;
+            font-weight: 500;
+        }
+
+        #right:hover {
+            border:white;
+            color: rgb(29, 29, 255);
+            background-color:white;
+        }
+
+        #left:hover {
+            border:white;
+            color: rgb(29, 29, 255);
+            background-color:white;
+        }
+
+        body {
+            background-color: lightblue;
+        }
+        
+    </style>
+
+    <body>
+        <div id="container">
+            <button type="button" id="right" onclick="change_right()">></button>
+            <button type="button" id="left" onclick="change_left()"> <</button>
+        </div>
+    </body>
+
+    <script>
+        var cars = ["(car_img1.jpg)","(car_img2.jpg)","(car_img3.jpg)","(car_img4.jpg)","(car_img5.jpg)"]
+        var car_index = 0
+
+        function change_right() {
+            car_index ++;
+
+            if (car_index== 5) {
+                car_index = 0;
+            }
+            document.getElementById("container").style.backgroundImage = "url"+ cars[car_index];
+        }
+
+        function change_left() {
+            car_index --;
+
+            if (car_index==-1) {
+                car_index = 4;
+            }
+            document.getElementById("container").style.backgroundImage = "url"+ cars[car_index];
+        }
+
+        document.getElementById("container").style.backgroundImage = "url"+ cars[car_index];
+
+    </script>
+</htmL>
+
